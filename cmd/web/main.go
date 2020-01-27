@@ -5,6 +5,10 @@ import (
 	"net/http"
 )
 
+var (
+	rootDir = "../../"
+)
+
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", home)

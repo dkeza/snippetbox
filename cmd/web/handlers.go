@@ -8,10 +8,6 @@ import (
 	"strconv"
 )
 
-var (
-	htmlDir = "../../ui/html/"
-)
-
 func home(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
@@ -19,9 +15,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 
 	files := []string{
-		htmlDir + "home.page.tmpl",
-		htmlDir + "base.layout.tmpl",
-		htmlDir + "footer.partial.tmpl",
+		rootDir + "ui/html/home.page.tmpl",
+		rootDir + "ui/html/base.layout.tmpl",
+		rootDir + "ui/html/footer.partial.tmpl",
 	}
 
 	ts, err := template.ParseFiles(files...)
